@@ -1,0 +1,184 @@
+﻿.u-text-truncate .h4{
+    max-width: 100%;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+    word-wrap: normal !important;
+}
+.browse-businesses_category--island > h3{
+    padding-top: 0;
+    font-size: 14px;
+    line-height: 1.28571em;
+    color: #333;
+}
+
+.categories-row {
+    margin-bottom: 30px !important;
+}
+.categories-row-text-centered {
+    text-align: center !important;
+}
+
+.arrange {
+    display: table;
+    min-width: 100%;
+    table-layout: auto;
+}
+
+    .arrange.hidden {
+        display: none;
+    }
+
+.arrange_unit {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: table-cell;
+    vertical-align: top;
+}
+
+.island {
+    padding: 11px;
+    background: #f5f5f5;
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+}
+
+.island-light, .island--light {
+    background: white;
+}
+
+.island-blue, .island--blue {
+    border-color: #cddae2;
+    background: #f0f3f8;
+}
+
+.island-city-scape, .island--city-scape {
+    background-image: url(https://s3-media2.fl.yelpcdn.com/assets/srv0/yelp_styleguide/ef1e928917fa/assets/img/structural/cityscape.png);
+    background-repeat: no-repeat;
+    background-position: center 55%;
+    background-size: 600px 400px;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .island-city-scape, .island--city-scape {
+        background-image: url(https://s3-media3.fl.yelpcdn.com/assets/srv0/yelp_styleguide/248de198b86e/assets/img/structural/cityscape@2x.png);
+    }
+}
+
+.island_header {
+    margin: -11px;
+    margin-bottom: 11px;
+    border-radius: 4px 4px 0 0;
+}
+
+.island_header--puzzle {
+    padding-bottom: 57%;
+    overflow: hidden;
+}
+
+.island-stack {
+    padding: 0;
+}
+
+    .island-stack > .island-item {
+        padding: 14px 11px 11px;
+        border-top: 1px solid #e6e6e6;
+    }
+
+        .island-stack > .island-item:first-child {
+            border-top: none;
+        }
+
+.island--card {
+    padding: 5.5px;
+    background-color: white;
+}
+
+.card {
+    border: 1px solid #e6e6e6;
+    border-radius: 4px;
+    background: white;
+}
+
+.browse-businesses_category--island {
+    padding-top: 17px;
+    padding-bottom: 17px;
+    display: block;
+}
+
+    .browse-businesses_category--island:hover, .browse-businesses_category--island:active {
+        text-decoration: none;
+        border-color: #0073bb;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+
+        .browse-businesses_category--island:hover .browse-businesses_category-title, .browse-businesses_category--island:active .browse-businesses_category-title {
+            color: #0073bb;
+        }
+
+    .browse-businesses_category--island:active {
+        box-shadow: none;
+    }
+
+.browse-businesses_category-img {
+    height: 72px;
+    width: 72px;
+}
+
+.more-categories-divider {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+    .more-categories-divider::before, .more-categories-divider::after {
+        position: absolute;
+        right: 97px;
+        pointer-events: none;
+    }
+
+    .more-categories-divider::before {
+        width: 0;
+        height: 0;
+        content: '';
+        display: inline-block;
+        border-style: solid;
+        border-color: transparent transparent #b8b8b8;
+        border-bottom-style: solid;
+        border-width: 0 12px 12px;
+        top: -12px;
+    }
+
+    .more-categories-divider::after {
+        width: 0;
+        height: 0;
+        content: '';
+        display: inline-block;
+        border-style: solid;
+        border-color: transparent transparent #f5f5f5;
+        border-bottom-style: solid;
+        border-width: 0 12px 12px;
+        top: -11px;
+    }
+
+.browse-businesses_initial-categories {
+    margin-bottom: -30px;
+}
+
+.browse-businesses_more-categories {
+    padding-top: 30px;
+    transition: padding-top 0.2s ease-in-out, max-height 0.2s ease-in-out, opacity 0.2s ease-in-out;
+    animation-delay: 0.1s;
+    overflow: hidden;
+    position: absolute;
+    visibility: hidden;
+}
+
+    .browse-businesses_more-categories.is-disabled {
+        opacity: 0;
+        padding-top: 0;
+    }
+
+.homepage-hero-category{
+
+}

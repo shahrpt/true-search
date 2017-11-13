@@ -1,0 +1,328 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/_Layout.cshtml";
+}
+
+    <root-navbar listing="main.apidata" top="true" bottom="false">
+        <div bindonce="" class="breadcrumbs">
+            <div class="breadcrumbsWrapper">
+                <ul>
+                    <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                        <a bo-href="vm.baseUrl" itemprop="item" href="https://www.truelocal.com.au/">
+                            <span itemprop="name">Home</span>
+                        </a><meta itemprop="position" content="1">
+                    </li>
+                    <li itemprop="itemListElement" itemscope="" itemtype="https://schema.org/ListItem">
+                        <span itemprop="item"><span itemprop="name" bo-bind="vm.searchConfigManager.getSearchBreadcrump()">Search in Australia</span>
+
+                        </span><meta itemprop="position" content="2">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </root-navbar>
+
+<div class="view-tools" aria-hidden="false" style="top: inherit;">
+    <div class="view-holder">
+        <bs-sorting>
+            <div class="dropdown">
+                <button id="sort-toggle" type="button" class="btn-dropdown ng-binding">
+                    Best Match
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu mobile-cover">
+                    <li class="label-sort">Sort by</li>
+                    <li class="ng-binding active" tabindex="0">Best Match</li>
+                    <li class="ng-binding" tabindex="0">Reviews</li>
+                    <li class="ng-binding ng-scope" tabindex="0">Deals</li>
+                </ul>
+            </div>
+        </bs-sorting>
+        <a href="javascript:void(0)" class="filter" ng-click="main.expandRefine()" id="refine-btn" style="display: block;"><i class="icon icon-filter-2"></i><span>Refine</span></a>
+        <ul class="view-options">
+            <li tooltip="list view" class="js-make-list-view active" tabindex="0" style="">
+                <i class="icon icon-tile"></i>
+            </li>
+            <li tooltip="grid view" class="mobile-hidden-grid" tabindex="0" style="">
+                <i class="icon icon-view-module-1"></i>
+            </li>
+            <li class="noLocation" id="noLocationLink" tooltip-no-location="">
+                <div class="noLocationWrapper">
+                    <i class="icon-house"></i>
+                    <i class="icon-close"></i>
+                    <span>There are <b>300 businesses</b> which are not displayed here.</span>
+                    <a href="javascript:void(0)" id="showList">You can view all listing here.</a>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div id="main" class="main_theme_light-grey main_type_pv-0" aria-hidden="false">
+    <div id="sortDropdownFader" class="modal-backdrop fade in" style="display: none;"></div>
+
+    <div class="search-results js-search-results ng-scope" ng-class="main.gridClass" ng-if="main.viewOnPage=='results'" style="">
+        <search-category-details class="ng-isolate-scope">
+                            <div class="search-category-details ng-scope" ng-if="vm.loaded" style="">
+                                      <h3 class="search-category-title ng-binding">
+                                      </h3>
+                                <div class="search-category-content ng-binding" tabindex="0"></div>
+
+                                  </div>
+                        </search-category-details>
+        <search-results class="resultsWrapper">
+                            <div class="searchWrapper">
+                                      <div class="expandSearch" aria-hidden="true">
+                                          <span class="search-result" style="text-decoration:none;">1599359&nbsp;&nbsp;<b>results</b> found in <b>Australia</b></span>
+                                      </div>
+                                <ul class="list">
+                                    <li ng-repeat="listing in vm.listings" ng-class="{ 'listing-advertise-tile': listing.type == 'TILES' }" class="ng-scope">
+      <!-- ngIf: !listing.type --><div ng-if="!listing.type" class="list-item ng-scope" bo-id="'list-item-' + listing.id" ng-init="vm.checkImage(listing)" bo-class="{'newListing' : listing.newListing,
+                   'hasDeals' : listing.statistics.deals &amp;&amp; listing.statistics.deals>0,
+                   'sponsoredListing' : listing.sponsored,
+                   'noReviews' : listing.statistics.reviews==0,
+                   'noImage' : !vm.hasImage[listing.id],
+                   'noDescription' : !listing.description}" id="list-item-52FBF10D-0467-47DF-A48A-40BA92C32093">
+        <div class="item-category">
+          <!--<span class="sponsoredLabel">Ad</span>-->
+        <div class="ng-binding">Electricians</div>
+          <span class="newListingLabel">New</span>
+        </div>
+
+        <div class="item-details">
+          <a ng-href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield?target=reviews" class="search-rating pull-right" ng-click="vm.saveClickedListingAndTrack('reviews', listing)" href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield?target=reviews">
+            <bdp-stars reviews="listing.statistics" category="listing.categories.category[0]" class="ng-isolate-scope"><!--Seo star rating prop-->
+<!-- ngIf: vm.showSeoProps -->
+
+<!--end seo star rating prop-->
+
+<div bindonce="" class="rating-holder" ng-class="{ 'noReviewsYet' : !vm.showStars() }">
+	<!-- boIf: vm.showStars() --><span class="rating ng-scope" bo-if="vm.showStars()">
+		<span bo-class="vm.active(1)+' '+vm.type()" class="icon-check-star-active icon-rank-army-star-22 star"><span class="halfPath"></span></span>
+		<span bo-class="vm.active(2)+' '+vm.type()" class="icon-check-star-active icon-rank-army-star-22 star"><span class="halfPath"></span></span>
+		<span bo-class="vm.active(3)+' '+vm.type()" class="icon-check-star-active icon-rank-army-star-22 star"><span class="halfPath"></span></span>
+		<span bo-class="vm.active(4)+' '+vm.type()" class="icon-check-star-active icon-rank-army-star-22 star"><span class="halfPath"></span></span>
+		<span bo-class="vm.active(5)+' '+vm.type()" class="icon-check-star icon-rank-army-star-22 star"><span class="halfPath"></span></span>
+	</span><!-- rating -->
+	<!-- boIf: !vm.noReviewsText --><span bo-if="!vm.noReviewsText" class="count ng-scope" bo-bind="vm.reviewsText()">372 Reviews</span>
+	<!-- boIf: !vm.showStars() -->
+</div> <!-- rating-holder -->
+</bdp-stars>
+          </a>
+          <!-- ngIf: !vm.platformService.isMobilePlatform() --><div class="phone ng-scope" ng-if="!vm.platformService.isMobilePlatform()" ng-click="vm.trackSearchEvents('phone number click', listing)" role="button" tabindex="0">
+            <span class="ng-binding">(07) 3029 6321</span>
+          </div><!-- end ngIf: !vm.platformService.isMobilePlatform() -->
+          <a class="sendtomobile" ng-click="vm.openModalSendtoMobile(listing)" href="#">
+              <i class="icon icon-mobile-phone-portrait"></i>
+              <span>Send to mobile</span>
+          </a>
+          <!-- ngIf: vm.platformService.isMobilePlatform() && vm.getPhoneNumber(listing) -->
+          <!-- <div class="sendMobile">
+            <i class="icon-phone"></i>
+            Send to mobile
+          </div> -->
+          <bdp-copy-points listing="listing" class="ng-isolate-scope"><div class="item-specs">
+  <!-- ngRepeat: point in vm.points -->
+</div>
+</bdp-copy-points>
+        </div>
+
+        <div class="detailsWrapper">
+	<a ng-href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield" class="item-title" ng-click="vm.saveClickedListingAndTrack('business listing click', listing)" href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield">
+            <!-- boIf: listing.name.length>26 -->
+            <!-- boIf: listing.name.length<=26 --><p ng-class="{'newListingWidth':listing.newListing}" bo-if="listing.name.length<=26" bo-text="listing.name" class="ng-scope">Fallon Solutions</p>
+          </a>
+          <div class="item-address ng-isolate-scope" ng-class="{'service-location': vm.isService || !vm.isDisplayMap, 'show-link-as-text': !vm.isDisplayMap, 'hide-address': !vm.address}" ng-click="vm.onMapSelect(vm.listing.id, vm.listing.isTol, vm.listing.isBol, vm.isDisplayMap)" search-result-listing="listing" grid-class="vm.gridClass" role="button" tabindex="0">
+  <!-- boIf: vm.address --><i class="icon-location-pin-2 ng-scope" bo-if="vm.address"></i>
+  <!-- boIf: vm.address --><span bo-if="vm.address" class="ng-scope">
+    <!-- boIf: vm.isService -->
+    <span business-address="vm.address" class="ng-binding ng-isolate-scope">41 Devlan St, Mansfield, QLD, 4122</span>
+  </span>
+</div>
+          <div class="item-deals"><a ng-href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield?target=deals" ng-click="vm.saveClickedListingAndTrack('check deals', listing)" href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield?target=deals"><i class="icon-deals"></i> Deals <span>available</span></a></div>
+          <div class="item-info">
+            <a ng-href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield" href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield"><!-- ngIf: vm.hasImage[listing.id] --><div class="item-image ng-scope" ng-if="vm.hasImage[listing.id]" ng-style="vm.getImage(listing)" style="background-image: url(&quot;https://media.truelocal.com.au/5/3/52FBF10D-0467-47DF-A48A-40BA92C32093/fallon-solutions-west-end-air-conditioning-heating-installation-over-50-vehicles-on-the-roadwe-can-be-there-today-d2c4-184x138.jpg&quot;);"></div><!-- end ngIf: vm.hasImage[listing.id] --></a>
+            <a ng-href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield" class="item-about-no-hover" href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield">
+            </a><div class="item-description"><a ng-href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield" class="item-about-no-hover" href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield">
+              <span class="item-about ng-isolate-scope" tl-truncate="" height-limit="105" tl-ellipsis="<a href=&quot;https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield?target=details&quot; title=&quot;read more&quot;>...read more</a>" ng-click="vm.saveClickedListingAndTrack(vm.readMoreText, listing)" tl-title="Looking for a Tradie you can trust?
+
+Do you need a Plumber, Electrician, Handyman, Drains Expert, Carpenter, TV Antenna Installer, Appliance Repair Technician or Air Conditioning Technicians?
+
+Fallon Solutions (formerly Neil T Fallon Services) can do it all! We can help you with most of your Trade requirements around your Home and Business. 
+
+Why use Fallon Solutions?
+We have been trading for over 50 years and during that time have developed a loyal base of customers. So we must be doing something right! 
+
+Furthermore, as we cover all the major trades you need around your home or business, you only have to deal with 1 company. This is extremely advantageous when needing the services of more than 1 trade for a project. 
+
+We have over 60 vehicles on the road all with GPS tracking to ensure that we can get someone to you as soon as possible.
+
+We also hire only fully qualified and licensed tradespersons and ensure they receive ongoing training to keep them at the forefront of the industry.
+
+Some of the services we offer are:
+
+-Air Conditioning
+-Electrician
+-Plumber
+-Blocked Drains
+-Appliance Repairs
+-Gas Fitter
+-Handyman Services
+-Hot Water Systems
+-Data Cabling
+-TV Antenna Installation
+-Carpenter
+-Energy Audits
+
+We service both domestic and commercial customers with the same high level of service.
+
+Call us today to find out how we can help you!" role="button" tabindex="0"><span>Looking for a Tradie you can trust?
+
+Do you need a Plumber, Electrician, Handyman, Drains Expert, Carpenter, TV Antenna Installer, Appliance Repair Technician or Air Conditioning Technicians?
+
+F<a href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield?target=details" title="read more">...read more</a></span></span>
+              </a><!-- ngIf: listing.favouriteReview.text --><div class="item-review ng-scope" ng-if="listing.favouriteReview.text" ng-class="{'no-item-image-review': !vm.hasImage[listing.id]}"><a ng-href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield" class="item-about-no-hover" href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield">
+                <!-- ngIf: listing.favouriteReviewerAvatar --><div class="review-avatar ng-scope" ng-if="listing.favouriteReviewerAvatar">
+                  <img ng-src="https://media.truelocal.com.au/avatars/-50x50.jpg" alt="" src="https://media.truelocal.com.au/avatars/-50x50.jpg">
+                </div><!-- end ngIf: listing.favouriteReviewerAvatar -->
+                <!-- ngIf: !listing.favouriteReviewerAvatar -->
+                </a><a ng-href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield?target=featured-review" href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield?target=featured-review"><div class="comment ng-binding">“Its great to have finally found a company that has all the tradies ...”</div></a>
+              </div><!-- end ngIf: listing.favouriteReview.text -->
+            </div>
+            
+          </div>
+          <div class="item-writeReview">Be the first to review this business - <a ng-href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield?target=write-review" ng-click="vm.saveClickedListingAndTrack('write a review', listing)" href="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield?target=write-review">Write a review</a></div>
+          <div class="item-sponsored"><span>sponsored listing</span></div>
+        </div>
+      </div><!-- end ngIf: !listing.type -->
+      <!-- ngIf: listing.type == 'TILES' && listing.size -->
+      <search-arrow current-index="$index" class="ng-isolate-scope"><!-- ngIf: vm.getShouldBeDisplayed() --></search-arrow>
+
+      <!-- ngIf: listing.type != 'TILES' && !listing.size --><div ng-if="listing.type != 'TILES' &amp;&amp; !listing.size" class="listing-details clickable-listing ng-scope" itemscope="" itemtype="http://schema.org/LocalBusiness">
+        <meta itemprop="name" content="Fallon Solutions">
+        <meta itemprop="image" content="https://media.truelocal.com.au/5/3/52FBF10D-0467-47DF-A48A-40BA92C32093/fallon-solutions-west-end-air-conditioning-heating-installation-over-50-vehicles-on-the-roadwe-can-be-there-today-d2c4-184x138.jpg">
+        <meta itemprop="url" content="https://www.truelocal.com.au:443/business/fallon-solutions-1/mansfield">
+        <!-- ngIf: vm.getPhoneNumberFormated(listing) --><meta ng-if="vm.getPhoneNumberFormated(listing)" itemprop="telephone" content="(07) 3029 6321" class="ng-scope"><!-- end ngIf: vm.getPhoneNumberFormated(listing) -->
+        <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+          <!-- ngIf: listing.addresses.address[0].streetNumber&&listing.addresses.address[0].streetName&&listing.addresses.address[0].streetType --><meta ng-if="listing.addresses.address[0].streetNumber&amp;&amp;listing.addresses.address[0].streetName&amp;&amp;listing.addresses.address[0].streetType" itemprop="streetAddress" content="41 Devlan St" class="ng-scope"><!-- end ngIf: listing.addresses.address[0].streetNumber&&listing.addresses.address[0].streetName&&listing.addresses.address[0].streetType -->
+          <meta itemprop="addressLocality" content="Mansfield">
+          <meta itemprop="addressRegion" content="QLD">
+        </div>
+      </div><!-- end ngIf: listing.type != 'TILES' && !listing.size -->
+    </li>
+                                    <li>
+                                        <div class="list-item ng-scope sponsoredListing noReviews" id="list-item-4A971564-A06E-42B0-943E-8DC7A978A20D">
+                                            <div class="item-category">
+          
+                                                <div class="ng-binding">Building Construction</div>
+                                                <span class="newListingLabel">New</span>
+                                            </div>
+
+    
+                                            <div class="item-details">
+                                                <a ng-href="https://www.truelocal.com.au:443/business/intrinsic-design-and-build/clarence-gardens?target=reviews" class="search-rating pull-right" ng-click="vm.saveClickedListingAndTrack('reviews', listing)" href="https://www.truelocal.com.au/business/intrinsic-design-and-build/clarence-gardens?target=reviews">
+                                                    <bdp-stars reviews="listing.statistics" category="listing.categories.category[0]" class="ng-isolate-scope"><!--Seo star rating prop-->
+                                
+                                                        <div bindonce="" class="rating-holder" ng-class="{ 'noReviewsYet' : !vm.showStars() }">
+                                                            <span class="rating ng-scope" bo-if="vm.showStars()">
+                                                                <span bo-class="vm.active(1)+' '+vm.type()" class="icon-check-star icon-rank-army-star-22 star"><span class="halfPath"></span></span>
+                                                                <span bo-class="vm.active(2)+' '+vm.type()" class="icon-check-star icon-rank-army-star-22 star"><span class="halfPath"></span></span>
+                                                                <span bo-class="vm.active(3)+' '+vm.type()" class="icon-check-star icon-rank-army-star-22 star"><span class="halfPath"></span></span>
+                                                                <span bo-class="vm.active(4)+' '+vm.type()" class="icon-check-star icon-rank-army-star-22 star"><span class="halfPath"></span></span>
+                                                                <span bo-class="vm.active(5)+' '+vm.type()" class="icon-check-star icon-rank-army-star-22 star"><span class="halfPath"></span></span>
+                                                            </span>
+                                                            <span bo-if="!vm.noReviewsText" class="count ng-scope" bo-bind="vm.reviewsText()">No Reviews Yet</span>
+                                                        </div>
+
+                                                                                                                               
+                                                    </bdp-stars>
+                                                </a>
+
+    
+                                                <div class="phone ng-scope" tabindex="0">
+    
+                                                    <span class="ng-binding">0412 131 464</span>
+                                                </div>
+    
+                                                <a class="sendtomobile" href="#">
+    
+                                                    <i class="icon icon-mobile-phone-portrait"></i>
+                                                    <span>Send to mobile</span>
+                                                </a>
+    
+                                                <bdp-copy-points listing="listing">
+                                                    <div class="item-specs">
+                                                    </div>
+                                                </bdp-copy-points>
+
+                                            </div>
+
+
+                                            <div class="detailsWrapper">
+        
+                                                <a class="item-title" href="https://www.truelocal.com.au/business/intrinsic-design-and-build/clarence-gardens">
+                                      
+
+                                                    <p>Intrinsic Design &amp; Build</p>
+                                                </a>
+        
+                                                <div class="item-address" search-result-listing="listing" grid-class="vm.gridClass" role="button" tabindex="0">
+                                                    <i class="icon-location-pin-2" bo-if="vm.address"></i>
+                                                    <span>                                                                                                                                   <span business-address="vm.address" class="ng-binding ng-isolate-scope">46 Winston Ave, Clarence Gardens, SA, 5039</span>
+                                                    </span>
+                                                </div>
+        
+                                                <div class="item-deals"><a href="https://www.truelocal.com.au/business/intrinsic-design-and-build/clarence-gardens?target=deals"><i class="icon-deals"></i> Deals <span>available</span></a></div>
+                                                <div class="item-info">
+                                                    <a ng-href="https://www.truelocal.com.au:443/business/intrinsic-design-and-build/clarence-gardens" href="https://www.truelocal.com.au/business/intrinsic-design-and-build/clarence-gardens">
+                                                                                                                                   
+                                                        <div class="item-image ng-scope" ng-if="vm.hasImage[listing.id]" ng-style="vm.getImage(listing)" style="background-image: url(&quot;https://media.truelocal.com.au/4/D/4A971564-A06E-42B0-943E-8DC7A978A20D/1484547330080_new-INTRINSIC-round-Logo-h350-184x138.jpg&quot;);">                                                                                                                                   
+                                                        </div>
+                           
+                                                    </a>
+
+                                                    <a class="item-about-no-hover" href="https://www.truelocal.com.au/business/intrinsic-design-and-build/clarence-gardens">
+                                                                                                                     
+                                                    </a>
+                                                    <div class="item-description">
+                                                                                                                                   
+                                                        <a  class="item-about-no-hover" href="https://www.truelocal.com.au/business/intrinsic-design-and-build/clarence-gardens">
+                                                            <span class="item-about" tabindex="0"><span>Intrinsic
+                                                                                                      Design is a vibrant, energetic and exciting interior design and 
+                                                                                                      building team based in Adelaide. Our team consists of 3 key members, 
+                                                                                                      Brendon Henman, Natasha Krotiris and Amelia Cassin.
+
+                                                                                                      Intrinsic <a href="https://www.truelocal.com.au/business/intrinsic-design-and-build/clarence-gardens?target=details" title="read more">...read more</a></span></span>
+                                                        </a>
+                                                    </div>
+            
+                                                </div>
+                                                <div class="item-writeReview">Be the first to review this business - <a ng-href="https://www.truelocal.com.au:443/business/intrinsic-design-and-build/clarence-gardens?target=write-review" ng-click="vm.saveClickedListingAndTrack('write a review', listing)" href="https://www.truelocal.com.au/business/intrinsic-design-and-build/clarence-gardens?target=write-review">Write a review</a></div>
+                                                <div class="item-sponsored"><span>sponsored listing</span></div>
+                                            </div>
+                                        </div>
+                                        <search-arrow current-index="$index">
+                                        </search-arrow>
+
+                                        <div>
+                                            <meta itemprop="name" content="Intrinsic Design &amp; Build">
+                                            <meta itemprop="image" content="https://media.truelocal.com.au/4/D/4A971564-A06E-42B0-943E-8DC7A978A20D/1484547330080_new-INTRINSIC-round-Logo-h350-184x138.jpg">
+                                            <meta itemprop="url" content="https://www.truelocal.com.au:443/business/intrinsic-design-and-build/clarence-gardens">
+                                            <meta ng-if="vm.getPhoneNumberFormated(listing)" itemprop="telephone" content="0412 131 464" class="ng-scope">
+                                            <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress">
+                                                <meta ng-if="listing.addresses.address[0].streetNumber&amp;&amp;listing.addresses.address[0].streetName&amp;&amp;listing.addresses.address[0].streetType" itemprop="streetAddress" content="46 Winston Ave" class="ng-scope">
+                                                <meta itemprop="addressLocality" content="Clarence Gardens">
+                                                <meta itemprop="addressRegion" content="SA">
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                                  </div>
+                        </search-results>
+        <bs-load-more>
+            <button class="btn btn-full btn-add js-review-open" aria-hidden="false">
+                      <span>LOAD MORE RESULTS</span>
+                  </button>
+        </bs-load-more>
+    </div>
+</div>

@@ -1,0 +1,250 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/_Layout.cshtml";
+}
+<div class="homepageHeader">
+    <div class="homepageVisual" style="background-image: url(&quot;https://media.truelocal.com.au/homepage-backgrounds/HOME_BG_2.jpg&quot;);">
+
+    </div>
+    <div class="homepageWrapper">
+        <h1>
+            BEST UMRAH KNOWS WHERE TO FIND <span>GREAT UMRAH OFFERS</span>
+        </h1>
+        <div class="home-page__search-wrapper">
+            <div class="search-form">
+                <form>
+                    <fieldset>
+                        <div class="form-frame">
+                            <div class="search-form-holder com-search-border">
+                                <div id="input_type_name" class="input input_type_name icon icon-search">
+                                    <input id="categorySelected" type="text" autocomplete="off" tabindex="1" placeholder="What are you looking for?" >
+                                    <div class="drop drop_type_categories">
+                                        <ul id="categoryList">
+                                            <li class="category-item" data-value="Clothing Retailers">
+                                                <a href="#"><i class="icon icon-t-shirt categories-input-icon"></i>Clothing retailers</a>
+                                            </li>
+                                            <li class="category-item" data-value="Resturant">
+                                                <a href="#"><i class="icon icon-fork-knife categories-input-icon"></i>Restaurants</a>
+                                            </li>
+                                            <li class="category-item" data-value="Beauty Salon">
+                                                <a href="#"><i class="icon icon-spa-lotion categories-input-icon"></i>Beauty salons</a>
+                                            </li>
+                                            <li class="category-item" data-value="Cafes">
+                                                <a href="#"><i class="icon icon-coffee-cup-2 categories-input-icon"></i>Cafes</a>
+                                            </li>
+                                            <li class="category-item" data-value="Hairdressers">
+                                                <a href="#"><i class="icon icon-comb categories-input-icon"></i>Hairdressers</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="input input_type_place">
+                                    <input type="text" placeholder="Suburb, city or postcode" autocomplete="off" tabindex="2" id="header--search-location--field" aria-invalid="false">
+                                    <i class="icon-no-location" role="button" tabindex="0"></i>
+                                </div>
+                            </div>
+
+                            <div class="submit-holder">
+                                <input type="submit" id="header--search-submit" class="btn btn-search com-search-border" value="SEARCH" tabindex="3">
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+        <div class="downloadApp">
+            <a href="#" target="_blank" class="">
+                <i class="icon icon-fork-knife"></i>
+                <span>Restaurants</span>
+            </a>
+            <a href="#" target="_blank" class="android">
+                <i class="icon icon-spa-lotion"></i>
+                <span>Beauty Salons</span>
+            </a>
+            <a href="#" target="_blank" class="mac">
+                <i class="icon icon-medical-box"></i>
+                <span>Doctors</span>
+            </a>
+            <a href="#" target="_blank" class="android">
+                <i class="icon icon-t-shirt"></i>
+                <span>Clothing Retails</span>
+            </a>
+        </div>
+    </div>
+    <div class="shadow"></div>
+</div>
+
+<div class="moreCities">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-content-center">
+                <h2>Best Search Islamabad</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xs-6 col-sm-3 col-md-1 col-lg-1 col-lg-offset-2 col-md-offset-2 text-align-center">
+                <a href="#">Lahore</a>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-1 col-lg-1 text-align-center">
+                <a href="#">
+                    <span>Karachi</span>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-1 col-lg-1 text-align-center">
+                <a href="#">
+                    <span>Multan</span>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-1 col-lg-1 text-align-center">
+                <a href="#">
+                    <span>Jehlum</span>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-1 col-lg-1 text-align-center">
+                <a href="#">
+                    <span>Peshawar</span>
+                </a>
+            </div>
+            <div class="col-xs-6 col-sm-3 col-md-2 col-lg-2 text-align-center">
+                <a href="#">
+                    <i class="icon icon-search"></i><span>More Cities</span>
+                </a>
+            </div>
+        </div>
+        <hr />
+    </div>
+</div>
+<link href="~/Content/Reviews.css" rel="stylesheet" />
+<div class="newBusinesses">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-content-center">
+                <h2>Hot & New Businesses</h2>
+
+            </div>
+        </div>
+        <div class="row">
+            @for (int i = 0; i <= 2; i++)
+            {
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+                    <div class="card business-passport-card">
+                        <div class="card_photo">
+                            <div class="photo-box photo-box--interactive photo-box--background" style="background-image: url(https://s3-media3.fl.yelpcdn.com/bphoto/p067-Z0qY8GawN7G4RSW4w/l.jpg);">
+                                <a href="#" class="photo-box_link">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card_body">
+                            <div class="card_content">
+                                <span>
+                                    <a href="#" data-hovercard-id=""><span>Blue Barn Gourmet</span></a>
+                                </span>
+
+                                <div bindonce="" class="rating-holder">
+                                    <span class="rating">
+                                        <span class="icon-check-star-active icon-rank-army-star-22 star">
+                                            <span class="halfPath"></span>
+                                        </span>
+                                        <span class="icon-check-star-active icon-rank-army-star-22 star">
+                                            <span class="halfPath"></span>
+                                        </span>
+                                        <span class="icon-check-star-active icon-rank-army-star-22 star">
+                                            <span class="halfPath"></span>
+                                        </span>
+                                        <span class="icon-check-star-half icon-rank-army-star-22 star">
+                                            <span class="halfPath"></span>
+                                        </span>
+                                        <span class="icon-check-star icon-rank-army-star-22 star">
+                                            <span class="halfPath"></span>
+                                        </span>
+                                    </span>
+                                </div>
+                                <div class="price-category">
+                                    <span class="bullet-after">
+                                        <span class="price-range">$$</span>
+                                    </span>
+                                    <span>Ice Cream &amp; Frozen Yogurt</span>
+                                </div>
+                                <p class="business-passport-card_date-opened">
+                                    <a href="#" target="_blank" class="">
+                                        <i class="icon icon-location-map"></i>
+                                        <span>Opened 1 Week ago</span>
+                                    </a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<link href="~/Content/Categories.css" rel="stylesheet" />
+<div class="localStars">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 align-content-center">
+                <h2>Browse Businesses by Category</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="categories-row categories-row-text-centered">
+                <div class="arrange_unit col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                    <a class="browse-businesses_category--island island island-light" href="#">
+                        <img class="browse-businesses_category-img" src="~/Images/categories/72x72_restaurants.png" alt="Restaurants" width="72">
+                        <h3 class="u-text-truncate">Restaurants</h3>
+                    </a>
+                </div>
+                <div class="arrange_unit col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                    <a class="browse-businesses_category--island island island-light" href="#">
+                        <img class="browse-businesses_category-img" src="~/Images/categories/72x72_shopping.png" alt="Shopping" width="72">
+                        <h3 class="u-text-truncate">Shopping</h3>
+                    </a>
+                </div>
+                <div class="arrange_unit col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                    <a class="browse-businesses_category--island island island-light" href="#">
+                        <img class="browse-businesses_category-img" src="~/Images/categories/72x72_nightlife.png" alt="Nightlife" width="72">
+                        <h3 class="u-text-truncate">Nightlife</h3>
+                    </a>
+                </div>
+                <div class="arrange_unit col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                    <a class="browse-businesses_category--island island island-light" href="#">
+                        <img class="browse-businesses_category-img" src="~/Images/categories/72x72_active_life.png" alt="Active Life" width="72">
+                        <h3 class="u-text-truncate">Active Life</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="categories-row categories-row-text-centered">
+                <div class="arrange_unit col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                    <a class="browse-businesses_category--island island island-light" href="#">
+                        <img class="browse-businesses_category-img" src="~/Images/categories/72x72_beauty.png" alt="Beauty &amp; Spas" width="72">
+                        <h3 class="browse-businesses_category-title u-text-truncate">Beauty &amp; Spas</h3>
+                    </a>
+                </div>
+                <div class="arrange_unit col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                    <a class="browse-businesses_category--island island island-light" href="#">
+                        <img class="browse-businesses_category-img" src="~/Images/categories/72x72_automotive.png" alt="Automotive" width="72">
+                        <h3 class="browse-businesses_category-title u-text-truncate">Automotive</h3>
+                    </a>
+                </div>
+                <div class="arrange_unit col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                    <a class="browse-businesses_category--island island island-light" href="#">
+                        <img class="browse-businesses_category-img" src="~/Images/categories/72x72_home_services.png" alt="Home Services" width="72">
+                        <h3 class="browse-businesses_category-title u-text-truncate">Home Services</h3>
+                    </a>
+                </div>
+                <div class="arrange_unit col-xs-6 col-sm-6 col-md-3 col-lg-3">
+                    <a class="browse-businesses_category--island island island-light" href="#">
+                        <img class="browse-businesses_category-img" src="~/Images/categories/72x72_more_categories.png" alt="More Categories" width="72">
+                        <h3 class="browse-businesses_category-title u-text-truncate" data-toggle-text="Fewer">More Categories</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,184 @@
+﻿@using System.Web.Optimization
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>@Page.Title</title>
+        @RenderSection("head", required: false)
+    </head>
+    <body>
+        @Styles.Render("~/Content/css")
+        
+        <header class="loged">
+            <main-navbar>
+                <div class="header-holder">
+                    <span class="btn-search" search-button-mobile=""></span>
+                    <span class="btn-menu" role="button" tabindex="0"></span>
+                    <ul class="options">
+                        <li>
+                            <a href="#" class="categories-dropdown-header">
+                                <i class="icon icon-view-list"></i>
+                                <span>Categories</span>
+                            </a>
+                            <div class="drop drop_type_categories">
+                                <ul>
+                                    <li class="category-item"><a href="#"><i class="icon icon-hamburger"></i>Takeaways</a></li>
+                                    <li class="category-item"><a href="#"><i class="icon icon-t-shirt"></i>Clothing retailers</a></li>
+                                    <li class="category-item"><a href="#"><i class="icon icon-fork-knife"></i>Restaurants</a></li>
+                                    <li class="category-item"><a href="#"><i class="icon icon-spa-lotion"></i>Beauty salons</a></li>
+                                    <li class="category-item"><a href="#"><i class="icon icon-coffee-cup-2"></i>Cafes</a></li>
+                                    <li class="category-item"><a href="#"><i class="icon icon-comb"></i>Hairdressers</a></li>
+                                    <li class="category-item"><a href="#"><i class="icon icon-icon-mechanic"></i>Mechanics</a></li>
+                                    <li class="category-item"><a href="#"><i class="icon icon-spa-rock"></i>Massage</a></li>
+                                    <li class="category-item"><a href="#"><i class="icon icon-shower"></i>Plumbing</a></li>
+                                    <li class="category-item"><a href="#"><i class="icon icon-medical-box"></i>Doctors</a></li>
+                                </ul>
+                               <a href="#" class="all">View all categories</a>
+                            </div> <!-- .drop -->
+                        </li>
+                        <li>
+                            <a ng-click="vm.addBusiness()" href="#">
+                                <i class="icon icon-add-circle-1"></i>
+                                <span>Add Business</span>
+                            </a>
+                        </li>
+                        <!-- ngIf: vm.authenticated()==false -->
+                        <li ng-if="vm.authenticated()==false" ng-click="vm.loginModal()" class="ng-scope" role="button" tabindex="0">
+                            <a href="#">
+                                <i class="icon icon-icon-sign_big"></i>
+                                <span>Log In / Sign Up</span>
+                            </a>
+                        </li><!-- end ngIf: vm.authenticated()==false -->
+                        <!-- ngIf: vm.authenticated()==true -->
+                    </ul> <!-- .options -->
+
+                    <div class="logo big" ng-class="vm.headerService.logoClass" itemscope="" itemtype="https://schema.org/Organization" style="">
+                        <a href="#">
+                            <img src="~/Images/logo.png" alt="True Local">
+                            <meta itemprop="url" content="http://www.trueumrah.com">
+                            <meta itemprop="logo" content="~/Images/logo.png">
+                            <meta itemprop="name" content="True Local">
+                        </a>
+                    </div>
+
+                    <bdp-header-search-form data-placeholder-live="false" class="ng-isolate-scope">
+                        <div class="search-form js-header-search-form">
+                            <form ng-submit="vm.startSearch($event)" class="ng-pristine ng-valid">
+                                <fieldset>
+                                    <div class="form-frame">
+                                        <div class="submit-holder">
+                                            <input type="submit" id="header--search-submit" class="btn btn-search com-search-border ng-isolate-scope" value="SEARCH" vm="vm" tabindex="3" ng-go-input-search="">
+                                        </div>
+                                        <div class="search-form-holder com-search-border">
+                                            <div class="input input_type_name">
+                                                <input type="text" placeholder="Search for..." data-ng-model="vm.keyword" name="KEYWORD" ng-search-input-change="" vm="vm" autocomplete="off" tabindex="1" ng-blur="vm.keywordInputState(false)" ng-focus="vm.keywordInputState(true)" ng-trim="false" class="ng-pristine ng-untouched ng-valid ng-isolate-scope" aria-invalid="false">
+                                            </div>
+                                            <div class="input input_type_place">
+                                                <input type="text" placeholder="Location" data-ng-model="vm.location" name="LOCATION" ng-search-input-change="" vm="vm" autocomplete="off" tabindex="2" id="header--search-location--field" ng-blur="vm.locationInputState(false)" ng-focus="vm.locationInputState(true)" ng-trim="false" class="ng-pristine ng-untouched ng-valid ng-isolate-scope" aria-invalid="false">
+                                             ><i class="ng-scope icon-current-location" ng-class="{'loading': vm.geoLocating, 'icon-no-location': vm.errorGeoLocating , 'icon-current-location': !vm.errorGeoLocating}" ng-click="vm.geoLocate()" ng-if="vm.location.length == 0" role="button" tabindex="0"></i>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </form>
+                        </div><!-- .search-form -->
+                    </bdp-header-search-form>
+
+                </div> <!-- .header-holder -->
+                <!-- ngIf: vm.menuMobile==true --> <!-- #main-nav -->
+            </main-navbar>
+        </header>
+        
+        <div id="internal-view" style="padding-top: 12px;">
+            @RenderBody()
+        </div>
+
+        <footer >
+                <div bindonce="" class="footer-holder">
+                          <div class="adv">
+                              <div id="btmlb"></div>
+                          </div>
+                          <div class="options-columns">
+                              <div class="column">
+                                  <h4>true local</h4>
+                                  <ul>
+                                      <li><a href="#">About</a></li>
+                                      <li><a href="#">Blog</a></li>
+                                      <li><a href="#">Newsletter</a></li>
+                                      <li><a href="#">Reviews</a></li>
+                                      <li><a href="#">Deals</a></li>
+                                      <li><a href="#">Local Stars</a></li>
+                                      <li><a href="#">Careers</a></li>
+                                  </ul>
+                              </div>
+                              <!-- .column -->
+                              <div class="column">
+                                  <h4>Business</h4>
+                                  <ul>
+                                      <li><a href="#">Add a Business</a></li>
+                                      <li><a href="#">Business Centre</a></li>
+                                      <li><a href="#">Handling Reviews</a></li>
+                                      <li><a href="#">Advertise with Us</a></li>
+                                      <li><a href="#">Customer Service</a></li>
+                                  </ul>
+                              </div>
+                              <!-- .column -->
+                              <div class="column">
+                                  <h4>help &amp; support</h4>
+                                  <ul>
+                                      <li><a href="#">Support Centre</a></li>
+                                      <li><a href="#">Staff Guidelines</a></li>
+                                      <li><a href="#">Terms &amp; Conditions</a></li>
+                                      <li><a href="#">Privacy Policy</a></li>
+                                  </ul>
+                              </div>
+                              <!-- .column -->
+                              <div class="column">
+                                  <h4>Mobile apps</h4>
+                                  <ul>
+                                      <li><a href="#">iOS</a>
+                                      </li>
+                                      <li><a href="#">Android</a>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <!-- .column -->
+                              <div class="column">
+                                  <h4>follow us</h4>
+                                  <ul class="social">
+                                      <li><a href="#"><span class="icon-facebook-circle"></span></a></li>
+                                      <li><a href="#"><span class="icon-instagram-circle"></span></a></li>
+                                      <li><a href="#"><span class="icon-pinterest-circle"></span></a></li>
+                                      <li><a href="#"><span class="icon-twitter-circle"></span></a></li>
+                                      <li><a href="#"><span class="icon-g-circle"></span></a></li>
+                                  </ul>
+                                  <!-- .social -->
+                              </div>
+                          </div>
+                          <!-- .option-column -->
+                      </div>
+                <div class="footer-bottom">
+                    
+                </div>
+        </footer>
+        <script src="~/Scripts/jquery-3.1.1.js"></script>
+        <script>
+           /* $("#categoryList").on("click", "a", function (e) {
+                var $this = $(this).parent();
+                $("#categorySelected").val($this.data("value"));
+                //$("i", this).toggleClass("icon icon-spa-lotion categories-input-icon");                
+                $('.input_type_name').addClass('no-before');
+                $('.input_type_name').addClass('clothing-retailers-before');
+            });*/
+            
+            $("#categoryList").on("click", "a", function (e) {
+                var $this = $(this).parent();
+                
+                var $icon = $(this).find("i");
+                ($icon).attr('class');
+                $("#categorySelected").val($this.data("value"));
+                $("#input_type_name").removeAttr('class');
+                $('#input_type_name').addClass('input input_type_name '+($icon).attr('class'));
+            });
+
+        </script>
+    </body>
+</html>
